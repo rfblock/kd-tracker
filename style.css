@@ -1,0 +1,55 @@
+html, main, body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	background-color: black;
+	color: white;
+}
+
+#main-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.main-button {
+	display: flex;
+	width: 50%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Roboto';
+	font-size: 50vmin;
+}
+
+.main-button:hover {
+	background-color: rgb(21, 21, 21);
+}
+
+#kd-display {
+	display: flex;
+	flex-direction: column;
+
+	width: 50vmin;
+	height: 50vmin;
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	border: 1px solid white;
+	background: black;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	justify-content: center;
+
+	align-items: center;
+}
+
+#kd-display > span {
+	font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 10vmin;
+}
+
+#kd-display > #kd-ratio {
+	font-size: 6vmin;
+}
