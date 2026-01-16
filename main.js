@@ -17,6 +17,11 @@ const updateDisplay = () => {
 	$('#kd-ratio').innerText = `${kills}:${deaths}`;
 }
 
+$('#kd-display').addEventListener('click', () => {
+	$('html').requestFullscreen();
+	screen.orientation.lock('landscape');
+})
+
 $('#kill-button').addEventListener('click', () => {
 	kills += 1;
 	updateDisplay();
