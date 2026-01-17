@@ -17,9 +17,10 @@ const updateDisplay = () => {
 	$('#kd-ratio').innerText = `${kills}:${deaths}`;
 }
 
-$('#kd-display').addEventListener('click', () => {
+$('#fullscreen-popup').addEventListener('click', () => {
 	$('html').requestFullscreen();
 	screen.orientation.lock('landscape');
+	$('#fullscreen-popup').style.display = 'none';
 })
 
 $('#kill-button').addEventListener('click', () => {
@@ -32,3 +33,33 @@ $('#death-button').addEventListener('click', () => {
 	updateDisplay();
 });
 
+$('#kd-display').addEventListener('click', () => {
+	$('#kd-display').classList.add('hidden');
+	$('#info-display').classList.remove('hidden');
+});
+
+$('#info-display').addEventListener('click', () => {
+	$('#info-display').classList.add('hidden');
+	$('#kd-display').classList.remove('hidden');
+});
+
+const updateTime = () => {
+	const t = new Date();
+	let hours = t.getHours() % 12;
+	hours = hours ? hours : 12;
+	const time = hours + ':' + ('0' + t.getMinutes()).slice(-2);
+	$('#info-time').innerText = time;
+};
+setInterval(updateTime, 1000);
+
+const updateBattery = level => {
+	$('#info-battery').innerText = `${Math.floor(level*100)}%`;
+};
+
+navigator.getBattery().then(battery => {
+	console.log(battery);
+	battery.addEventListener('levelchange', () => {
+		updateBattery(battery.level);
+	});
+	updateBattery(battery.level);
+});

@@ -11,13 +11,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+	<div id="fullscreen-popup">Tap for Fullscreen</div>
 	<div id="main-content">
 		<div class="main-button" id="kill-button">K</div>
 		<div class="main-button" id="death-button">D</div>
 	</div>
-	<div id="kd-display">
-		<span id="kd-decimal">---</span>
-		<span id="kd-ratio">---</span>
+	<div class="center-display" id="kd-display">
+		<span class="main" id="kd-decimal">---</span>
+		<span class="sub" id="kd-ratio">---</span>
 	</div>
+	<div class="center-display hidden" id="info-display">
+		<span class="main" id="info-time">---</span>
+		<span class="sub" id="info-battery">---</span>
+	</div>
+
 </body>
 </html>
