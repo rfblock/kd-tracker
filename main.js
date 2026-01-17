@@ -9,7 +9,11 @@ const updateDisplay = () => {
 	kd = Math.floor(kd * 100) / 100;
 
 	if (deaths == 0) {
-		$('#kd-decimal').innerText = `${kills}`;
+		if (kills == 0) {
+			$('#kd-decimal').innerText = '---';
+		} else {
+			$('#kd-decimal').innerText = `${kills}`;
+		}
 	} else {
 		$('#kd-decimal').innerText = `${kd}`;
 	}
@@ -30,6 +34,22 @@ $('#kill-button').addEventListener('click', () => {
 
 $('#death-button').addEventListener('click', () => {
 	deaths += 1;
+	updateDisplay();
+});
+
+$('#undo-kill').addEventListener('click', () => {
+	if (kills <= 0) {
+		return;
+	}
+	kills -= 1;
+	updateDisplay();
+});
+
+$('#undo-death').addEventListener('click', () => {
+	if (deaths <= 0) {
+		return;
+	}
+	deaths -= 1;
 	updateDisplay();
 });
 

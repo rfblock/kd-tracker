@@ -48,6 +48,33 @@ html, main, body {
 	background-color: rgb(21, 21, 21);
 }
 
+.undo-button {
+	width: 20vmin;
+	aspect-ratio: 1/1;
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid white;
+	border-top: none;
+	background-color: black;
+}
+
+.undo-button:hover {
+	background-color: rgb(21, 21, 21);
+}
+
+#undo-kill {
+	border-left: none;
+	left: 0;
+}
+
+#undo-death {
+	border-right: none;
+	right: 0;
+}
+
 .center-display {
 	display: flex;
 	flex-direction: column;
